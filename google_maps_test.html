@@ -108,7 +108,6 @@
 
         geocoder.geocode({'latLng': latLng}, function(results, status) {
           var name;
-          debugger;
           if(results[0] !== undefined && results[0]['address_components'][1] !== undefined)
             name = results[0]['address_components'][1]['long_name'];
           else
