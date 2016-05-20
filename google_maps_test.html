@@ -108,7 +108,8 @@
 
         geocoder.geocode({'latLng': latLng}, function(results, status) {
           var name;
-          if(results[0] != null && results[0]['address_components'][1] != null)
+          debugger;
+          if(results[0] !== undefined && results[0]['address_components'][1] !== undefined)
             name = results[0]['address_components'][1]['long_name'];
           else
             name = 'Unknown Location';
