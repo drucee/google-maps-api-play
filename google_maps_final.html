@@ -110,8 +110,14 @@
       var names = [];
       results.forEach(function(result){
         if(result['types'].includes('neighborhood'))
-          names.push("<b>Possible Neighborhood</b>: " + result['formatted_address']);
+          names.push("<b>Neighborhood</b>: " + result['formatted_address']);
       });
+
+      if (names.length > 1){
+        names.forEach(function(name, index, names) {
+          names[index] = "<b>Possible</b> " + name;
+        });
+      }
 
       if(names.length === 0){
 
